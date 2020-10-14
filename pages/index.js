@@ -1,65 +1,55 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import s from '../styles/Home.module.css'
+import {MainLayout} from "../components/MainLayout";
+import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+import {useState} from "react";
+import Avatar from "@material-ui/core/Avatar";
+import {makeStyles} from "@material-ui/styles";
+import EditIcon from '@material-ui/icons/Edit';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import PhoneIcon from '@material-ui/icons/Phone';
+
+const useStyles = makeStyles({
+    avatar: {
+        backgroundColor: "#662d91",
+    },
+    email: {
+        color: "#00BFA5",
+    }
+})
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+    let [info, setInfo] = useState({name: null, surname: null, patronymic: null});
+    const classes = useStyles();
+    return (<MainLayout>
+            <div className={s.container}>
+                <div className={s.headers}>
+                    <header className={s.header}>
+                        <div className={s.profileHeader}>
+                            <div className={s.notification}><NotificationsNoneIcon/></div>
+                            <div className={s.avatar}><Avatar className={classes.avatar}/></div>
+                            <div className={s.name}>Киреев Е.В</div>
+                        </div>
+                    </header>
+                </div>
+                <div className={s.namePage}>
+                    <div className={s.personalProfile}>Личный профиль</div>
+                    <span>главная/личный профиль</span></div>
+                <div className={s.mainProfile}>
+                    <div className={s.mainProfile_avatar}><Avatar style={{height: '70px', width: '70px'}}
+                                                                  className={classes.avatar}/></div>
+                    <div className={s.mainProfileName}>Киреев Евгений Владимирович</div>
+                    <div className={s.edit}><span>редактировать</span><EditIcon
+                        style={{height: '20px', width: '20px'}}/></div>
+                </div>
+                <div className={s.info}>
+                    <div className={s.info_email}><AlternateEmailIcon className={classes.email}/>
+                        <span>example@example.com</span></div>
+                    <div className={s.line}></div>
+                    <div className={s.info_phone}><PhoneIcon className={classes.email}/><span>Укажите номер телефона</span></div>
+                </div>
+            </div>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+        </MainLayout>
+    )
 }
