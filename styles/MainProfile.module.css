@@ -1,0 +1,42 @@
+.mainProfile {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    background: linear-gradient(270deg, #1A78C2 0%, #1A78C2 101.06%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 25px;
+}
+.mainProfileName {
+    margin-left: 40px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    color: white;
+}
+.edit {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    /* identical to box height */
+    color: white;
+    text-transform: uppercase;
+
+}
+.edit:hover {
+    -moz-box-shadow:0 0 10px #fff;
+    -webkit-box-shadow:0 0 10px #fff;
+    box-shadow:0 0 10px #fff;
+    border-radius: 10px;
+    padding: 3px;
+}
+.edit span {
+    margin-right: 10px;
+}

@@ -1,0 +1,17 @@
+.namePage {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.personalProfile {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.namePage span {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+}

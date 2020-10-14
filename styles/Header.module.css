@@ -1,0 +1,41 @@
+.headers {
+    display: flex;
+
+}
+
+.header {
+    display: flex;
+    margin-left: auto;
+    margin-top: 20px;
+
+}
+
+.profileHeader {
+    display: flex;
+    align-items: center;
+}
+
+.notification {
+    display: flex;
+    border-right: 2px solid white;
+    padding-right: 26px;
+    color: white;
+}
+
+.avatar {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.name {
+    display: flex;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    margin-right: 20px;
+}
+
+.Avatar {
+    color: black;
+}
