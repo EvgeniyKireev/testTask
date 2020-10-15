@@ -6,9 +6,9 @@ import PhoneIcon from "@material-ui/icons/Phone";
 let Info = (props) => {
     return (<div className={s.info}>
         <div className={s.info_email}><AlternateEmailIcon style={{color: "#00BFA5"}}/>
-            <span>example@example.com</span></div>
+            <span>{props.state.email == "" ? "Укажите email" : props.state.email}</span></div>
         <div className={s.line}></div>
-        <div className={s.info_phone}><PhoneIcon style={{color: "#00BFA5"}}/><span>Укажите номер телефона</span></div>
+        <div className={s.info_phone}><PhoneIcon style={{color: "#00BFA5"}}/><span>{props.state.phone == "" ? "Укажите номер телефона" : props.state.phone}</span></div>
     </div>);
 }
 

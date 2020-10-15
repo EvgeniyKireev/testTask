@@ -45,8 +45,19 @@
 }
 
 .field {
+    display: flex;
+    flex-direction: column;
     margin-left: 40px;
     padding-right: 70px;
+}
+.error {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+
+    /* Red */
+
+    color: #EB5757;
 }
 
 .btn {
@@ -88,5 +99,38 @@
         background: #01BDA7;
         margin-top: -30px;
         margin-bottom: 20px;
+    }
+}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+    .editInfo {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0px;
+        margin-right: -50px;
+        margin-left: 10px;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .edit_name {
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+    }
+
+    .edit_email {
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+    }
+
+    .edit_phone {
+        display: flex;
+        align-items: center;
+        margin-left: 0px;
     }
 }

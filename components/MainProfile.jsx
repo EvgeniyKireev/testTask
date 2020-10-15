@@ -6,7 +6,7 @@ import EditIcon from "@material-ui/icons/Edit";
 
 let MainProfile = (props) => {
     return (<div className={s.mainProfile}>
-        <div className={s.mainProfile_avatar}><Avatar style={{height: '60px', width: '60px', backgroundColor: "#662d91"}}
+        <div className={s.mainProfile_avatar}><Avatar style={{height: '60px', width: '60px', backgroundColor: "#662d91", zIndex: 0}}
                                                       /></div>
         <div className={s.mainProfileName}>{props.state.isCompleted ? props.state.name : "Необходимо ввести имя"}</div>
         <div onClick={() => (props.setEdit())}  className={s.edit}><span>редактировать</span><EditIcon

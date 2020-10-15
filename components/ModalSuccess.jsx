@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom';
-import s from "../styles/Modal.module.css";
+import s from "../styles/ModalSuccess.module.css";
 import {makeStyles, withStyles} from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import CloseIcon from '@material-ui/icons/Close';
 
-export default function Modal(props) {
+export default function ModalSuccess(props) {
     const ColorButton = withStyles((theme) => ({
         root: {
             padding: '15px 60px 15px 60px',
@@ -40,13 +40,9 @@ export default function Modal(props) {
     const classes1 = useStyles1();
     return ReactDOM.createPortal(<div className={s.main}>
         <div className={s.form}>
-            <div onClick={() => {props.closeModal()}} className={s.close}><CloseIcon /></div>
-            <div className={s.header}>Сохранить изменения?</div>
-            <div onClick={() => {props.saveData()}} className={s.btn}><ColorButton variant="contained" color="primary" className={classes.margin}>
-                Сохранить</ColorButton>
-            </div>
-            <div onClick={() => {props.closeModal()}} className={s.btn}><ColorButton1 variant="contained" color="primary" className={classes1.margin}>
-                Не Сохранять</ColorButton1>
+            <div className={s.header}>Данные успешно сохранены</div>
+            <div onClick={() => {props.closeModalSuccess()}} className={s.btn}><ColorButton variant="contained" color="primary" className={classes.margin}>
+                Хорошо</ColorButton>
             </div>
         </div>
         {props.children}
