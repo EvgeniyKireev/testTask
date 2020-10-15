@@ -12,7 +12,7 @@
     margin-bottom: 25px;
 }
 .mainProfileName {
-    margin-left: 40px;
+    margin-left: 10px;
     font-weight: 600;
     font-size: 30px;
     line-height: 41px;
@@ -39,4 +39,21 @@
 }
 .edit span {
     margin-right: 10px;
+}
+
+@media all and (max-width: 500px) {
+    .mainProfile{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+    }
+    .mainProfileName {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        margin-left: 10px;
+    }
+    .edit span{
+        display: none;
+    }
 }

@@ -12,6 +12,7 @@ class MyDocument extends Document {
                 <Head><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /></Head>
                 <body>
+                <div id={"portal"}></div>
                 <Main />
                 <NextScript />
                 </body>
