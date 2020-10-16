@@ -51,10 +51,12 @@ let EditInfo = (props) => {
     } else {
         divStyle = {}
     }
-    if (props.state.nameTemp.length > 39 || props.state.email.length > 30) {
-        divStyle = {"pointer-events": "none"}
-    } else {
-        divStyle = {}
+    if (props.state.nameTemp != null && props.state.email != null) {
+        if (props.state.nameTemp.length > 39 || props.state.email.length > 30) {
+            divStyle = {"pointer-events": "none"}
+        } else {
+            divStyle = {}
+        }
     }
     return (<div className={s.edit}>
         <form className={s.editInfo}>
@@ -70,7 +72,7 @@ let EditInfo = (props) => {
                     variant="outlined"
                 />
                     {!test(props.state.nameTemp) && <div className={s.error}>Укажите Фамилию и Имя</div>}
-                    {props.state.nameTemp.length > 39 && <div className={s.error}>Превышено количество символов</div>}
+                    {props.state.nameTemp != null ? props.state.nameTemp.length > 39 && <div className={s.error}>Превышено количество символов</div> : ''}
                 </div>
 
             </div>
@@ -89,7 +91,7 @@ let EditInfo = (props) => {
                     maxLength="28"
                 />
                     {!validateEmail(props.state.email) && <div className={s.error}>Вы неверно указали email</div>}
-                    {props.state.email.length > 25 && <div className={s.error}>Превышено количество символов</div>}
+                    {props.state.email ? props.state.email.length > 25 && <div className={s.error}>Превышено количество символов</div> : ''}
                 </div>
             </div>
             <div className={s.line}></div>
