@@ -25,9 +25,7 @@ export default class Home extends Component {
         };
     }
     componentDidMount() {
-        if (localStorage.length != 1) {
-            this.setState({name: localStorage.getItem('name'),nameTemp: localStorage.getItem('name'), email: localStorage.getItem('email'), phone: localStorage.getItem("phone")})
-        }
+        this.setState({name: localStorage.getItem('name'),nameTemp: localStorage.getItem('name'), email: localStorage.getItem('email'), phone: localStorage.getItem("phone")})
     }
 
     setName = (value) => {
