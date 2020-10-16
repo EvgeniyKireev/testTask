@@ -64,7 +64,7 @@ let EditInfo = (props) => {
                     rowsMax={4}
                     variant="outlined"
                 />
-                    {!test(props.state.nameTemp) && <div className={s.error}>Вы неверно указали имя</div>}</div>
+                    {!test(props.state.nameTemp) && <div className={s.error}>Укажите Фамилию и Имя</div>}</div>
             </div>
             <div className={s.line}></div>
             <div className={s.edit_email}><AlternateEmailIcon style={{color: "#00BFA5"}}/>
