@@ -24,6 +24,11 @@ export default class Home extends Component {
             success: false
         };
     }
+    componentDidMount() {
+        if (localStorage.length != 1) {
+            this.setState({name: localStorage.getItem('name'),nameTemp: localStorage.getItem('name'), email: localStorage.getItem('email'), phone: localStorage.getItem("phone")})
+        }
+    }
 
     setName = (value) => {
         this.setState({nameTemp: value})
@@ -45,13 +50,28 @@ export default class Home extends Component {
     }
     saveData = () => {
         this.setState({isEdit: false, isModal: false, success: true, isCompleted: true, name: this.state.nameTemp})
+        localStorage.setItem("name", this.state.nameTemp)
+        localStorage.setItem("email", this.state.email)
+        localStorage.setItem("phone", this.state.phone)
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: this.state.nameTemp,
+                email: this.state.email,
+                phone: this.state.phone
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json))
     }
     closeModalSuccess = () => {
         this.setState({success: false});
     }
 
     render() {
-        console.log(this.state)
         return (<MainLayout>
                 <Head>
                     <title>example.com</title>
